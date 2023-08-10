@@ -1,0 +1,15 @@
+{
+  "name": "lua-sandbox",
+  "version": "0.0.1",
+  "description": "lua script sandbox",
+  "main": "src/lua.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "quantv",
+  "license": "ISC",
+  "dependencies": {
+    "fengari": "^0.1.4",
+    "fengari-interop": "^0.1.3"
+  }
+}
