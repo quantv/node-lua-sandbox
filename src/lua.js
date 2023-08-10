@@ -30,15 +30,14 @@ const {
 
 //custom loading to remove unsafe function.
 function load_safe_libs(L){
-    const luaLib = lualib;
     const loadedLibs = {};
     loadedLibs["_G"] = require('./lib-safe/lbaselib').luaopen_base;
-    loadedLibs[luaLib.LUA_OSLIBNAME] = require('./lib-safe/loslib').luaopen_os;
-    //loadedLibs[luaLib.LUA_COLIBNAME] = luaLib.luaopen_coroutine;
-    loadedLibs[luaLib.LUA_TABLIBNAME] = luaLib.luaopen_table;
-    loadedLibs[luaLib.LUA_STRLIBNAME] = luaLib.luaopen_string;
-    loadedLibs[luaLib.LUA_MATHLIBNAME] = luaLib.luaopen_math;
-    loadedLibs[lualib.LUA_UTF8LIBNAME] = luaLib.luaopen_utf8;
+    loadedLibs[lualib.LUA_OSLIBNAME] = require('./lib-safe/loslib').luaopen_os;
+    //loadedLibs[lualib.LUA_COLIBNAME] = lualib.luaopen_coroutine;
+    loadedLibs[lualib.LUA_TABLIBNAME] = lualib.luaopen_table;
+    loadedLibs[lualib.LUA_STRLIBNAME] = lualib.luaopen_string;
+    loadedLibs[lualib.LUA_MATHLIBNAME] = lualib.luaopen_math;
+    loadedLibs[lualib.LUA_UTF8LIBNAME] = lualib.luaopen_utf8;
 
     for (let lib in loadedLibs) {
       lauxlib.luaL_requiref(
